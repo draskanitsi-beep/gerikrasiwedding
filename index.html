@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сватбата на Гергана и Красимир</title>
+    <style>
+        /* 1. Зареждане на твоя шрифт */
+        @font-face {
+            font-family: 'WeddingFont';
+            src: url('font.woff2') format('woff2'); /* Увери се, че файлът е тук */
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0ed; /* Кремавият цвят от фона ти */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 600px; /* Оптимално за мобилни устройства */
+            width: 100%;
+            line-height: 0; /* Маха разстоянията между картинките */
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* 2. Стилизиране на формата */
+        .form-section {
+            background-color: #f0f0ed; /* Трябва да съвпада с фона на PNG-тата */
+            padding: 20px 10%;
+            line-height: normal;
+            text-align: center;
+            font-family: 'WeddingFont', sans-serif;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 2px solid #fff;
+            border-radius: 25px;
+            box-sizing: border-box;
+            background: white;
+            font-family: inherit;
+            outline: none;
+        }
+
+        button {
+            background-color: #8dbce0; /* Светлосиньото от бутона ти */
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 25px;
+            font-size: 18px;
+            font-family: inherit;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #76a6ca;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="top.png" alt="Покана">
+
+        <div class="form-section">
+            <form action="https://formspree.io/f/ТУК_СЛАГАШ_ТВОЯ_ID_КОД" method="POST">
+                <label>Вашите имена</label>
+                <input type="text" name="names" required>
+
+                <label>Ще присъствате ли?</label>
+                <input type="text" name="attendance" placeholder="Да / Не" required>
+
+                <label>Брой на придружаващи лица?</label>
+                <input type="number" name="guests" min="0" value="0">
+
+                <button type="submit">ИЗПРАТИ</button>
+            </form>
+        </div>
+
+        <img src="bottom.png" alt="Програма и Локация">
+    </div>
+
+</body>
+</html>
