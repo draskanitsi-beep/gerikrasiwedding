@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Сватбата на Гергана и Красимир</title>
     <style>
-        /* Зареждане на твоя шрифт */
+        /* Зареждане на шрифта */
         @font-face {
             font-family: 'WeddingFont';
             src: url('font.woff2') format('woff2');
@@ -14,73 +14,101 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: #f0f0ed; /* Кремавият цвят от твоя дизайн */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            background-color: #f0f0ed;
+            font-family: 'WeddingFont', Arial, sans-serif;
+            display: block;
         }
 
-        .container {
+        .main-wrapper {
             max-width: 600px;
-            width: 100%;
-            line-height: 0;
+            margin: 0 auto;
+            text-align: center;
         }
 
         img {
             width: 100%;
             height: auto;
             display: block;
+            border: none;
         }
 
-        /* Стилизиране на формата */
-        .form-section {
-            background-color: #f0f0ed; 
-            padding: 40px 10%;
-            line-height: normal;
-            text-align: center;
-            font-family: 'WeddingFont', sans-serif;
+        .form-area {
+            background-color: #f0f0ed;
+            padding: 40px 20px;
         }
 
-        label {
+        .form-area label {
             display: block;
-            margin-bottom: 8px;
-            color: #555;
+            margin: 15px 0 5px 0;
             text-transform: uppercase;
             font-size: 14px;
             font-weight: bold;
-            letter-spacing: 1px;
+            color: #555;
         }
 
-        input, select {
+        .form-area input, .form-area select {
             width: 100%;
+            max-width: 400px;
             padding: 12px;
-            margin-bottom: 25px;
-            border: 2px solid #fff;
+            border: 2px solid #ffffff;
             border-radius: 25px;
-            box-sizing: border-box;
-            background: white;
             font-family: inherit;
             font-size: 16px;
-            outline: none;
-            color: #333;
+            box-sizing: border-box;
         }
 
-        /* Синият бутон от дизайна */
-        button {
+        .form-area button {
             background-color: #8dbce0;
             color: white;
             border: none;
-            padding: 15px 60px;
-            border-radius: 35px;
-            font-size: 22px;
+            padding: 15px 50px;
+            border-radius: 30px;
+            font-size: 20px;
             font-family: inherit;
+            margin-top: 30px;
             cursor: pointer;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            margin-top: 10px;
-            text-transform: uppercase;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
-        button:hover {
+        .form-area button:hover {
             background-color: #76a6ca;
-            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-wrapper">
+        <img src="top.png" alt="Wedding Top">
+
+        <div class="form-area">
+            <form action="https://formspree.io/f/xvzbpnyd" method="POST">
+                
+                <label>Вашите имена</label>
+                <input type="text" name="Names" required>
+
+                <label>Ще присъствате ли?</label>
+                <select name="Attendance" required>
+                    <option value="" disabled selected>Изберете...</option>
+                    <option value="Yes">Да, ще дойдем!</option>
+                    <option value="No">Няма да успеем.</option>
+                </select>
+
+                <label>Избор на меню</label>
+                <select name="Menu" required>
+                    <option value="" disabled selected>Изберете...</option>
+                    <option value="Meat">Месно</option>
+                    <option value="Veggie">Вегетарианско</option>
+                </select>
+
+                <label>Телефон за връзка</label>
+                <input type="tel" name="Phone" placeholder="08XXXXXXXX" required>
+
+                <button type="submit">ИЗПРАТИ</button>
+            </form>
+        </div>
+
+        <img src="bottom.png" alt="Wedding Bottom">
+    </div>
+
+</body>
+</html>
